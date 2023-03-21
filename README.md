@@ -11,4 +11,12 @@ This is template project for symfony with Docker and docker-compose.
 
 1. Clone the project ;
 2. Run `make copy-env` ;
-3. Run `docker compose run base-php composer create-project symfony/skeleton:"6.2.*" back` (change `6.2.*` with any symfony version you want) ;
+3. Update `.env` file with your own values (especially `SYMFONY_VERSION` if you want anthother than the default one) ;
+4. Run `make install-dev` ;
+
+## Make this stack you own
+
+To make this stack you own :
+
+- remove `.git` folder and re-initialize your own git repository ;
+- remove `/apps/back/` from `.gitignore` ;
