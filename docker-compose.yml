@@ -1,0 +1,33 @@
+---
+version: '3.8'
+
+services:
+    base-php:
+        &base-php
+        platform: linux/x86_64
+        env_file: .env
+        build:
+            context: .
+            dockerfile: docker/php/Dockerfile
+        command: [ "true" ]
+    composer-install:
+        <<: *base-php
+        volumes:
+            - ./apps:/usr/src/app
+        command: [ "php-fpm" ]
+        profiles: ["composer"]
+    php:
+        <<: *base-php
+        volumes:
+            - './apps/back:/usr/src/app'
+            - '.env:/usr/src/app/.env'
+        restart: unless-stopped
+        command: [ "php-fpm" ]
+    nginx:
+        image: nginx:1.21.3-alpine
+        ports:
+            - 80:80
+        volumes:
+            - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+            - ./public:/usr/src/app/public
+        restart: unless-stopped
