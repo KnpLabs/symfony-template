@@ -1,6 +1,6 @@
 # Symfony template project
 
-This is template project for symfony with Docker and docker-compose.
+This is template project for Symfony with Docker and Docker Compose.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ At this point you should have a working symfony project accessible on `localhost
 
 ## Start the project
 
-Run `make start` to start the project.
+Run `make start` to start the project (not necessary if you just ran `make install-dev`).
 
 ## Make this stack you own
 
