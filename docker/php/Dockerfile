@@ -11,7 +11,7 @@ RUN apt-get update \
 
 RUN docker-php-ext-install zip
 
-RUN pecl install apcu-5.1.17
+RUN pecl install apcu-5.1.22
 RUN docker-php-ext-enable apcu
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
