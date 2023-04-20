@@ -16,7 +16,7 @@ start: ## Start project
 stop: ## Stop project
 	docker compose stop
 
-install-dev: copy-env ## Install symfony
+install-dev: ## Install symfony
 	@echo -n "Are you sure to reinstall Symfony (current Symfony project will be lost?) [y/N] " && read ans && [ $${ans:-N} = y ]
 	@echo "Installing Symfony version \"${SYMFONY_VERSION}\""
 	rm -rf apps/back && mkdir apps/back
