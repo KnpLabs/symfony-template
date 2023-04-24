@@ -21,5 +21,5 @@ install-dev: ## Install symfony
 	@echo "Installing Symfony version \"${SYMFONY_VERSION}\""
 	rm -rf apps/back && mkdir apps/back
 	docker compose run --rm --no-deps composer-install composer create-project symfony/skeleton\:${SYMFONY_VERSION} back
-	docker-compose stop
+	docker compose stop
 	make start
