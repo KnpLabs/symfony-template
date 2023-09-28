@@ -1,11 +1,14 @@
 # Symfony template project
 
-This is template project for Symfony with Docker and Docker Compose.
+This is a template project for Symfony with Docker and Docker Compose which contains :
+- php (`>= 8.1`) with Symfony framework (`6.3`)
+- mysql (`8.0.32`)
+- A database running with mysql (see `.env` file for credentials)
 
 ## Requirements
 
-- Docker engine `>20.10`
-- Docker compose `>2`
+- Docker engine `> 20.10`
+- Docker compose `> 2`
 
 ## Installation
 
@@ -14,7 +17,7 @@ This is template project for Symfony with Docker and Docker Compose.
 3. Update `.env` file with your own values (especially `SYMFONY_VERSION` if you want anthother than the default one) ;
 4. Run `make install-dev` ;
 
-At this point you should have a working symfony project accessible on `localhost`.
+At this point you should have a working symfony project accessible on [localhost](http://localhost) .
 
 ## Start the project
 
