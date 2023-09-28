@@ -1,14 +1,15 @@
 # Symfony template project
 
 This is a template project for Symfony with Docker and Docker Compose which contains :
-- php (`>= 8.1`) with Symfony framework (`6.3`)
-- mysql (`8.0.32`)
-- A database running with mysql (see `.env` file for credentials)
+
+- A php (`>= 8.2`) service with Symfony framework (with the version specified in `.env` file or latest otherwise)
+- An Nginx web server
+- A database running with mysql (version `8.0.32`, see `.env` file for credentials)
 
 ## Requirements
 
 - Docker engine `> 20.10`
-- Docker compose `> 2`
+- Docker compose plugin `> 2`
 
 ## Installation
 
@@ -27,5 +28,5 @@ Run `make start` to start the project (not necessary if you just ran `make insta
 
 To make this stack you own :
 
-- remove `.git` folder and re-initialize your own git repository ;
-- remove `/apps/back/` from `.gitignore` ;
+- run `rm -rf .git && git init --initial-branch main` to remove `.git` folder and re-initialize your own git repository ;
+- rewrite this `README.md` file accordingly to your new project ;
