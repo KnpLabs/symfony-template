@@ -8,7 +8,7 @@ help: ## Display this current help
 .PHONY=install-dev copy-env start
 
 copy-env: ## Copy .env.dist to .env
-	cp -n .env.dist .env
+	cp --update=none .env.dist .env
 
 start: ## Start project
 	docker compose up -d
@@ -23,3 +23,7 @@ install-dev: ## Install symfony
 	docker compose run --rm --no-deps composer-install composer create-project symfony/skeleton\:${SYMFONY_VERSION} back
 	docker compose stop
 	make start
+
+git-clean:
+	sed -i '/^\/apps\/back\/$/d' .gitignore
+	rm -r .git
