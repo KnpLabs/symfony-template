@@ -1,8 +1,8 @@
-FROM composer:2.4.2 as composer
+FROM composer:2.4.2 AS composer
 
 ##################################
 
-FROM php:8.2-fpm as base-php
+FROM php:8.3-fpm AS base-php
 
 RUN apt-get update \
     && apt-get install -y \
@@ -35,7 +35,7 @@ USER 1000:1000
 
 ##################################
 
-FROM base-php as php
+FROM base-php AS php
 
 RUN composer install && composer clear-cache
 RUN composer dump-autoload --optimize --classmap-authoritative --no-dev
@@ -44,4 +44,4 @@ RUN PATH=$PATH:/usr/src/apps/vendor/bin:bin
 
 ##################################
 
-FROM base-php as composer-install
+FROM base-php AS composer-install
